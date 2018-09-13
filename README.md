@@ -23,4 +23,4 @@ A personal journal application
     d. Combination of a and b or a and c.
  8. Logout
  
- ![Login page] (http://venkatam.com/img/drd1.png)
+ ![Login page](https://github.com/mvsabhishek/mvsabhishek.github.io/tree/master/img/drd1.png)
