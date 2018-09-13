@@ -23,4 +23,3 @@ A personal journal application
     d. Combination of a and b or a and c.
  8. Logout
  
- ![Login Page](mvsabhishek.github.io/img/drd1.png)
