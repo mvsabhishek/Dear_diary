@@ -1,4 +1,4 @@
-# Dear_diary
+# Dear Diary
 A personal journal application
 
  There are three reasons why I developed this personal project:
@@ -23,4 +23,4 @@ A personal journal application
     d. Combination of a and b or a and c.
  8. Logout
  
- ![Login page] (img/drd1.png)
+ ![Login page] (http://venkatam.com/img/drd1.png)
