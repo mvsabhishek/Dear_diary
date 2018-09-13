@@ -1,0 +1,24 @@
+ {% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}Dear Diary{% endblock %}</title>
+    <style>
+        #supr {
+            background: url("{% static 'images/500bg.png'%}");
+            background-repeat: no-repeat;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    {% block content %}
+    <div id="supr" class="d-flex justify-content-center">
+        hello
+
+    </div>
+    {% endblock %}
+</body>

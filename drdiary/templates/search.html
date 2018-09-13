@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block content%}
+<div class="col-lg-5">
+    <a style=" float:right " class="btn btn-dark " href="{% url 'home'%} ">Go Back</a></div>
+<div class="cont-div">
+    <div class="d-flex justify-content-md-center ">
+        <form>
+            <input class="form-control" type="text " placeholder="Search here... " required>
+            <button class="btn btn-lg btn-primary btn-block" type=" submit ">Search</button>
+        </form>
+    </div>
+</div>
+<div class="margin ">
+    <div id="results ">{% if data is not None %} {{data}} {% endif %}</div>
+</div>
+{% endblock %}
+<!-- <div class="d-flex justify-content-start">
+            <a class="btn btn-dark" href="{% url 'search' %}">Search For Entry &nbsp;<i class="fa fa-search"></i></a>
+        </div> -->

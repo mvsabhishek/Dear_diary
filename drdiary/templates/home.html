@@ -1,0 +1,92 @@
+{% extends 'base.html' %} {% block content %}
+<div class="d-flex justify-content-center" style="position: absolute; z-index: 1000; left: 40%;">
+    {% if messages %} {% for message in messages %}
+    <div class="alert">{{ message }} <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> </div>{% endfor %} {% endif %}
+</div>
+<div class="container-fluid" style="margin: 0 auto; margin-bottom: 10%; margin-top:5%">
+    <h3>Hello, {{request.user.first_name}}!</h3>
+    <br> {% if not object_list %}
+    <h4>No Entries Found.</h4>
+    <br> {% if request.GET.term is not None %}
+    <a class="btn btn-warning" href="{%url 'index_view'%}">Go Back</a> {% endif %} {% else %}
+    <p class="s-expander"><i class="fa fa-search"></i> &nbsp; Search For Entry</p>
+    <div id="searchent">
+        <div class="d-flex">
+            <div class="d1-expander"><i class="fa fa-calendar"></i>&nbsp; Based on date</div>
+            <div class="d2-expander"><i class="fa fa-calendar"></i>&nbsp; Based on date range</div>
+        </div>
+        <div class="d-block justify-content-lg-center" style="font-family: Raleway;">
+            <form action="{% url 'index_view' %}" method="GET">
+                <div class="d-inline">
+                    <label style="font-weight:bold;">Title:</label>
+                    <input class="search" type="text" id="title" name="term" value="{{ request.GET.term }}" placeholder="Search for title.." />
+                    <div id="created_on">
+                        <label style="font-weight:bold;">Created on:</label>
+                        <input type="date" id="cr_on" name="dc" min="2018-01-01" class="form-control-sm" value="{{ request.GET.dc }}" />
+                    </div>
+                    <div id="from_to">
+                        <label style="font-weight:bold;">From:</label>
+                        <input type="date" id="from" name="dc1" min="2018-01-01" class="form-control-sm" value="{{ request.GET.dc1 }}" />
+
+                        <label style="font-weight:bold;">To:</label>
+                        <input type="date" id="to" name="dc2" min="2018-01-01" class="form-control-sm" value="{{ request.GET.dc2 }}" />
+
+                    </div>
+                    <button type="submit" class="btn btn-success"><i class="fa fa-search"></i> &nbsp; Search</button>
+                </div>
+            </form>
+            <br>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+
+        <table class="table table-hover table-bordered" id="table-home">
+            <thead class="thead-inverse">
+                <tr>
+                    <th style="text-align:center; width: 10%"></th>
+                    <th style="text-align:center; width: 60%">Title</th>
+                    <th style="text-align:center; width: 30%">Created On</th>
+                </tr>
+            </thead>
+            <tbody class="text-lg-center">
+                <div id="home-res">
+                    {% for ent in object_list %}
+                    <tr>
+                        <td>
+                            <a href="{% url 'delete_entry' ent.pk %}" onclick="return confirm('Do you really want to delete this entry? It cannot be undone.')" class="btn btn-danger">Delete</a>
+
+                        </td>
+                        <td>
+                            <a href="{% url 'view_entry' ent.pk %} ">{{ ent.title }}</a>
+                        </td>
+                        <td class="align-middle ">{{ent.created_at}}</td>
+                    </tr>
+                    {% endfor %}
+                </div>
+            </tbody>
+        </table>
+        </form>
+    </div>
+    <div style="margin-top:10%; margin:auto " class="d-flex justify-content-center ">
+        {% if is_paginated %}
+        <nav aria-label="Page navigation example ">
+            <ul class="pagination justify-content-left ">
+                {% if page_obj.has_previous %}
+                <li class="page-item "><a class="page-link " href="?page={{ page_obj.previous_page_number }} ">&laquo;</a></li>
+                {% else %}
+                <li class="page-item disabled "><a class="page-link " href="# "><span>&laquo;</span></a></li>
+                {% endif %} {% for i in page_obj.paginator.page_range %} {% if page_obj.number == i %}
+                <li class="page-item active "><a class="page-link " href="# ">{{ i }} <span class="sr-only ">(current)</span></a></li>
+                {% else %}
+                <li class="page-item "><a class="page-link " href="?page={{ i }} ">{{ i }}</a></li>
+                {% endif %} {% endfor %} {% if page_obj.has_next %}
+                <li class="page-item "><a class="page-link " href="?page={{ page_obj.next_page_number }} ">&raquo;</a></li>
+                {% else %}
+                <li class="page-item disabled "><a class="page-link " href="# "><span>&raquo;</span></a></li>
+                {% endif %}
+            </ul>
+        </nav>
+        {% endif %}
+    </div>
+</div>
+{% endif %} {% endblock %}

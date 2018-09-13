@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block content %}
+<div class="d-flex justify-content-center" style="position: absolute; z-index: 1000; left: 35%; top:10%;">
+    {% if form.errors %}
+    <div class="alert">
+        Incorrect Username or Password. Please try again. <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> </div>{% endif %}
+</div>
+<div class="col-lg-5" style="margin: 0 auto; margin-top:5%; background-color: #004263; padding: 20px 20px 10px 20px;">
+    <h2 style="text-align:center">Login</h2>
+    <form method="POST">
+        {% csrf_token %} {% for field in form %}
+        <input type="{% if field.label == 'Password' %}password{% else %}input{% endif %}" placeholder="{{ field.label }}" name="{{ field.name }}" class="form-control" /> {{ field.errors }}
+        <br /> {% endfor %}
+
+        <button type="submit" class="btn btn-primary" style="width:100%">Login</button>
+        <br />
+        <br />
+    </form>
+    <a id="aref" href="/signup">Not registered, yet? Sign Up!</a>
+</div>
+</div>
+
+{% endblock %}

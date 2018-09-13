@@ -1,0 +1,16 @@
+{% extends 'base.html' %}{% block content %}
+<div class="container-fluid" style="margin:0 auto; margin-top:5%">
+    <div class="col-lg-15">
+        <div>
+            <h4 style="float: left">How's it going {{request.user.first_name}}? </h4>
+            <a style="float:right" class="btn btn-dark" href="{% url 'index_view'%}">Cancel</a></div>
+        <form method="post">
+            <div class="form-group">
+                <br/> <br>{% csrf_token %} {{form.errors}} {{form}}
+            </div>
+            <button style="width:100%" type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <br>
+    </div>
+</div>
+{% endblock %}
