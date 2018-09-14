@@ -23,4 +23,4 @@ A personal journal application
  - Combination of title and date or title and date range.
  8. Logout
  
-![Login Page](mvsabhishek.github.io/img/drd1.png)
+![Login Page](https://github.com/mvsabhishek/mvsabhishek.github.io/img/drd1.png)
