@@ -23,17 +23,22 @@ A personal journal application
  - Combination of title and date or title and date range.
  8. Logout
  
-LOGIN
+- Login
+
 ![Login Page](https://github.com/mvsabhishek/mvsabhishek.github.io/blob/master/img/drd1.png)
 
-Home Screen
+- Home Screen
+
 ![Home Screen](https://github.com/mvsabhishek/mvsabhishek.github.io/blob/master/img/drd2.png)
 
-View a Journal Entry
+- View a Journal Entry
+
 ![View Entry](https://github.com/mvsabhishek/mvsabhishek.github.io/blob/master/img/drd3.png)
 
-Application on AWS Elastic Beanstalk
+- Application on AWS Elastic Beanstalk
+
 ![Application on AWS Elastic Beanstalk](https://github.com/mvsabhishek/mvsabhishek.github.io/blob/master/img/drd4.png)
 
-Search Scope for journal entries
+- Search Scope for journal entries
+
 ![Search Scope for journal entries](https://github.com/mvsabhishek/mvsabhishek.github.io/blob/master/img/drd5.png)
