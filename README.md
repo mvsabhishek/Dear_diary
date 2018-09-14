@@ -17,9 +17,9 @@ A personal journal application
  5. Update an Entry
  6. Delete an Entry
  7. Search for an Entry based on: 
-    a. Title
-    b. Date
-    c. Date Range
-    d. Combination of a and b or a and c.
+ - Title
+ - Date
+ - Date Range
+ - Combination of title and date or title and date range.
  8. Logout
  
